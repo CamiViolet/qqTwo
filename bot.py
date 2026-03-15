@@ -2,13 +2,13 @@
 # Description: bot.
 
 
-import dynamic_context
-import google.genai as genai
+# import dynamic_context
+# import google.genai as genai
 import os
 import sys
 from dotenv import load_dotenv
-from mistralai import Mistral
-from openai import OpenAI
+from mistralai.client import Mistral
+# from openai import OpenAI
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
 
@@ -115,16 +115,16 @@ if __name__ == '__main__':
     mistral_client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
 
     # Inizializza il client Gemini
-    gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+    # gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
     # Inizializza il client OpenAI
-    openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    # openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-        app = ApplicationBuilder().token(os.getenv("TELEGRAM_TOKEN")).build()
-        app.add_handler(CommandHandler("check", command_check))
-        app.add_handler(CommandHandler("quit", command_quit))
-        app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message))
-        print("Bot collegato, in ascolto...")
-        app.run_polling()
+    app = ApplicationBuilder().token(os.getenv("TELEGRAM_TOKEN")).build()
+    app.add_handler(CommandHandler("check", command_check))
+    app.add_handler(CommandHandler("quit", command_quit))
+    app.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), handle_message))
+    print("Bot collegato, in ascolto...")
+    app.run_polling()
 
     # import pdb; pdb.set_trace()
