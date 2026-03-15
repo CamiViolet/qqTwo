@@ -17,9 +17,11 @@ from collections import defaultdict
 # from patterns import get_patterns
 from dotenv import load_dotenv
 import tempfile
-from mistralai.client import Mistral
+from mistralai.client import Mistral    # pip install mistralai
 # from openai import OpenAI
 # from google.genai import Client
+from telegram import Update
+from telegram.ext import ContextTypes
 
 
 common_words_to_ignore = ['shall', 'none', 'document', 'documentation', 'describe', 'described', 'describes']
@@ -152,6 +154,7 @@ if __name__ == "__main__":
 
     # Initialize the Mistral client
     mistral_client = Mistral(api_key=os.getenv("MISTRAL_API_KEY"))
+    import pdb; pdb.set_trace()
 
     while True:
         user_question = input("Inserisci la tua domanda (o 'q' per uscire): ")
@@ -167,3 +170,5 @@ if __name__ == "__main__":
         ai_reply = chat_response.choices[0].message.content
 
         print(f"Risposta AI: {ai_reply}")
+
+# import pdb; pdb.set_trace()

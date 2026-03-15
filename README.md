@@ -1,8 +1,8 @@
 <!--  Cmd + K V for the preview -->
 
-# qqOne
+# qqTwo
 
-The qqOne leverages the capabilities of LLMs in order to improve some common activities like code creation, document creation and review, and answering questions related to the knowledge base.
+The qqTwo leverages the capabilities of LLMs in order to improve some common activities like code creation, document creation and review, and answering questions related to the knowledge base.
 
 It's characterized by requiring human intervention in the creation and maintenance of the knowledge base. This is a key point because it allows to keep the knowledge base clean and focused on the relevant topics, which is crucial for the quality of the answers provided by the LLM.
 
@@ -12,7 +12,7 @@ In order to allow the LLM to provide answers related to your private context wit
 
 The common solution for this is the RAG technique (Retrieval-Augmented Generation) that allows to process very large amounts of data, so that it can scale to the enterprise level. On the other side, it requires a complex toolchain to manage the multiple layers it needs (data-injestion, chunking, indexing, vector data-base creation, retrieval).
 
-The qqOne's approach is different because it assumes that the user explicitly maintain the input data (knowledge base) by keeping the clean and focused.
+The qqTwo's approach is different because it assumes that the user explicitly maintain the input data (knowledge base) by keeping the clean and focused.
 This brings several advantages:
 - The knowledge base is queried at real-time. This means that any information is available as soon as it is added to the knowledge base.
 - The knowledge base is much more dense of information because it is manually curated. This means that the LLM can provide more accurate and relevant answers.
@@ -21,7 +21,7 @@ This brings several advantages:
 
 # Knowledge Base 'kb0'
 
-The knowledge base is a collection of documents that are used by the tool qqOne to create context files for the LLM.
+The knowledge base is a collection of documents that are used by the tool qqTwo to create context files for the LLM.
 
 The knowledge bases are named by using the convention kb<N> where <N> is a number that identify the specific knowledge base. 
 
@@ -44,7 +44,7 @@ Given a knowledge base and a question, theis script creates the context file.
 
 The script extracts the most common words and ngrams from a knowledge base.
 
-### qqone_bot.py
+### qqTwo_bot.py
 
 Telegram bot that provides access to LLMs online services.
 
@@ -62,9 +62,9 @@ Calculate search patterns from a question.
 
 ## More details
 
-* qqOne is not integrated with the LLM. qqOne does not use the LLM’s API but instead produces a text file 
+* qqTwo is not integrated with the LLM. qqTwo does not use the LLM’s API but instead produces a text file 
 that is then used as context in GitHub Copilot chat.
-*   qqOne only accepts text files as input. Importing from other formats (Polarion, PDFs, images, Confluence pages, Jira issues) 
+*   qqTwo only accepts text files as input. Importing from other formats (Polarion, PDFs, images, Confluence pages, Jira issues) 
 must be done manually, even if supported by tools. In some sense, the retrieval part is missing.
 *   The user must use only official TTTech’s AI providers, currently Copilot and GitHub Copilot license. Using other providers is strictly prohibited.
 *   Ability to switch between different models offered by TTTech’s GitHub Copilot license. The results can vary significantly.
@@ -74,7 +74,7 @@ must be done manually, even if supported by tools. In some sense, the retrieval 
 *   The knowledge base is selected with strong criteria. Files are selected manually. Automatic crawling is not used.
 *   I can create highly specific contexts (for example, a specific review activity or a Jira feature) and switch between contexts instantly. Perhaps this is possible with standard tools, but I haven’t managed to do it.
 *   Extreme fine-tuning of context. For example, not just “Review Process in Polarion,” but “How the current Review Process in Polarion works?” and “How to improve the Review Process in Polarion.”
-*   The database is not created automatically on a periodic basis. qqOne allows continuous refinement of the database (adding, removing, modifying files continuously). On one hand, this requires a slight overhead for each activity; on the other hand, the database is always up to date on current topics (zero delay).
+*   The database is not created automatically on a periodic basis. qqTwo allows continuous refinement of the database (adding, removing, modifying files continuously). On one hand, this requires a slight overhead for each activity; on the other hand, the database is always up to date on current topics (zero delay).
 
 *   Note that LLM works best with information-dense documents. Important decision are always enriched with rationales, assumtions, considerations. Add also consideration about pros and cons of every decision. 
 
