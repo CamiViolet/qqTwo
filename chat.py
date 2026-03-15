@@ -101,6 +101,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         ai_reply = response.choices[0].message.content
     elif use_gemini:
+        # TODO: this will be discontinued by 01/06/2026: gemini-2.0-flash, gemini-2.0-flash-001, gemini-2.0-flash-lite, gemini-2.0-flash-lite-001
         if use_context:
             prompt = f"Domanda: {user_text}\n\nContesto: {CONTEXT_TEXT}"
             response = gemini_client.models.generate_content(
