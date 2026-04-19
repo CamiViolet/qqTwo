@@ -16,7 +16,7 @@ The qqTwo's approach is different because it assumes that the user explicitly ma
 This brings several advantages:
 - The knowledge base is queried at real-time. This means that any information is available as soon as it is added to the knowledge base.
 - The knowledge base is much more dense of information because it is manually curated. This means that the LLM can provide more accurate and relevant answers.
-- For the same reasone we have a lower risk of retrieving obsolete information.
+- For the same reason we have a lower risk of retrieving obsolete information.
 - There's also less risk of retrieving mismatching information. For example, the same components may have variants, but this is not visible by just downloading the Confluence pages.
 
 # Knowledge Base 'kb0'
