@@ -25,10 +25,6 @@ The knowledge base is a collection of documents that are used by the tool qqTwo 
 
 The knowledge bases are named by using the convention kb<N> where <N> is a number that identify the specific knowledge base. 
 
-The knowledge base kb0 is characterized by handling the following topics:
-- MotionWise Classic: product from TTTech.
-- MotionWise Communication: product from TTTech.
-
 The knowledge base is composed only by plain text file or by Markdown files.
 
 Diagrams are embedded directly in the Markdown documents and use human‑readable languages such as Mermaid or PlantUML. This provides allows a smoother workflow between the author and the generative AI. For example, the LLM can easily modify the diagrams. 
@@ -66,8 +62,6 @@ Calculate search patterns from a question.
 that is then used as context in GitHub Copilot chat.
 *   qqTwo only accepts text files as input. Importing from other formats (Polarion, PDFs, images, Confluence pages, Jira issues) 
 must be done manually, even if supported by tools. In some sense, the retrieval part is missing.
-*   The user must use only official TTTech’s AI providers, currently Copilot and GitHub Copilot license. Using other providers is strictly prohibited.
-*   Ability to switch between different models offered by TTTech’s GitHub Copilot license. The results can vary significantly.
 *   The model does not run locally.
 *   Minimal development cost, and I have personally been using it for months (mid-2025) and find it very useful.
 *   The knowledge base is handpicked and manually controlled. Only high-quality, relevant content is included. No automatic crawling.
