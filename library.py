@@ -15,6 +15,33 @@ from collections import defaultdict
 DOC_PROPERTIES_MAX_LINES = 30
 
 
+def calculate_markdown_size(directory):
+    """Calculate the total size of all markdown files in a directory.
+    
+    Given a path to an activity directory, this function recursively sums up
+    the size of all markdown files (.md) within that directory.
+    
+    Args:
+        directory: Path to the activity directory
+        
+    Returns:
+        Total size in bytes of all markdown files in the directory
+    """
+    total_size = 0
+    try:
+        for root, dirs, files in os.walk(directory):
+            for file in files:
+                if file.lower().endswith('.md') and file.lower() != 'glossary.md':
+                    file_path = os.path.join(root, file)
+                    try:
+                        total_size += os.path.getsize(file_path)
+                    except OSError:
+                        pass  # Skip files that can't be accessed
+    except OSError:
+        pass  # Return 0 if directory can't be accessed
+    return total_size
+
+
 def get_activity_update(activity):
     """Get the most recent update date for an activity"""
     md_files = glob.glob(os.path.join(activity, "*.md"))
@@ -141,6 +168,20 @@ def filter_out_properties(lines):
             lines_new.append(line)
             continue
     return lines_new
+
+
+def print_results_to_console(prev_results):
+    if prev_results is None:
+        return
+    i = 0
+    with open(r"C:\Users\nxg18988\AppData\Local\Temp\console.txt", "w") as fl:
+        for finding in prev_results:
+            line = "%s: %s (%s kB)" % (i, finding['title'], int(finding['size']/1024))
+            if 'count' in finding:
+                line += " [%d matches]" % finding['count']
+            print(line)
+            fl.write(line + "\n")
+            i += 1
 
 
 def write_file_with_properties(file_path, properties, lines):
