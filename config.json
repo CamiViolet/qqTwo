@@ -1,6 +1,6 @@
 {
-    "knowledge_base": "/Users/carlocamicia/kb1",
     "current_knowledge_base": "kb3",
+    "knowledge_base": "/Users/carlocamicia/kb1",
     "kb_configs": {
         "kb3": {
             "path": "/Users/carlocamicia/kb3"

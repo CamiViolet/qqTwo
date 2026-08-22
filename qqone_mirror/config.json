@@ -1,0 +1,38 @@
+{
+    "current_knowledge_base": "kb0",
+    "source_dir": "C:\\Users\\nxg18988\\Downloads",
+    "polarion_txt_export_source": "C:\\dev0\\qpdoc\\txt_export",
+    "polarion_txt_export_dest": "C:\\dev0\\kb0\\imports\\polarion",
+    "kb_configs": {
+        "kb0": {
+            "path": "C:\\dev0\\kb0"
+        },
+        "kb2": {
+            "path": "C:\\dev0\\kb0"
+        }
+    },
+    "common_words_to_ignore": [
+        "describe",
+        "described",
+        "describes",
+        "document",
+        "documentation",
+        "none",
+        "shall",
+        "summarize",
+        "feature"
+    ],
+    "synonyms_table": [
+        ["cd", "concept/design"],
+        ["client/server", "c/s"],
+        ["comparison", "vs"],
+        ["feature", "jira"],
+        ["problem", "challenge", "open.point"],
+        ["process", "procedure"],
+        ["restructur", "refactor", "rewrite"]
+    ],
+    "ngram_synonyms_table": [
+        ["asil logging", "series logging"],
+        ["qm logging", "debug logging"]
+    ]
+}
