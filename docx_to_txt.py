@@ -8,6 +8,7 @@ import sys
 import os
 from docx import Document
 import zipfile
+from library import load_config
 
 def excepthook(type, value, tb):
     import traceback, pdb
@@ -51,16 +52,11 @@ def docx_to_txt(docx_input):
         # Write to text file
         with open(txt_path, 'w', encoding='utf-8') as txt_file_obj:
             txt_file_obj.write(content)
+
+        # Delete the original .docx file after conversion
+        os.remove(docx_path)
     
     print(f"\nSuccessfully converted {len(docx_files)} file(s)")
-
-
-# Load configuration from JSON file
-def load_config():
-    config_file = os.path.join(os.path.dirname(__file__), "config.json")
-    with open(config_file, 'r', encoding='utf-8') as f:
-        config = json.load(f)
-    return config
 
 
 if __name__ == "__main__":
